@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{%  block content %}
+<div class="main_body">
+
+<form method="POST" action="" enctype="multipart/form-data">
+        {% csrf_token %}
+    <div class="container">
+      <h1 align="center">Create Post</h1>
+      <hr>
+  
+      <label for="title"><b>Title</b></label>
+      {{form.title}}
+      {{form.title.errors}}
+
+      <label for="category"><b>Category</b></label>
+      {{form.postcategory}}
+      {{form.postcategory.errors}}
+
+      <label for="description"><b>Description</b></label>
+      {{form.description}}
+      {{form.description.errors}}
+
+      <label for="password1"><b>Image</b></label>
+      {{form.image}}
+      {{form.image.errors}}
+      <hr>
+  
+      <button type="submit" class="registerbtn">Save</button>
+    </div>
+  </form>
+</div>
+
+{% endblock %}

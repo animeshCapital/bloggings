@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{%  block content %}
+{% include "message.html" %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <form method="POST" action="">
+                {% csrf_token %}
+                <div class="container login_form">
+                    <h1 align="center">Login</h1>
+                    <hr>
+                    <label for="username"><b>Username</b></label>
+                    {{form.username}}
+                    {{form.error.username}}
+
+                    <label for="password"><b>Password</b></label>
+                    {{form.password}} 
+                    {{form.error.password}}   
+                    <input type="submit" value="Login" class="registerbtn"/>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

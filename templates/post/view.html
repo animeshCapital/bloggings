@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{%  block content %}
+
+<section class="content">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card-body">
+            <div class="row">
+                <table class="table table-striped col-md-9">
+                    <tr>
+                        <th scope="row" width="200">Post Name</th>
+                        <th scope="row">Description</th>
+                        <th scope="row">Image</th>
+                    </tr>
+                    <tbody>
+                        <tr>
+                            <td>{{object.title}}  {{object.user}}</td>
+                            <td>{{object.description}}</td>
+                            <td><img class='img-responsive' src="{{ object.image.url }}" height="100px" width="150px" /></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                {% if user in object.likes.all %}
+                                    <a href="JavaScript:void(0)" class="user_like user_clicked"  onclick="like(this, {{object.id}})"><i id="clicked" class="fa fa-thumbs-up fa_icon"></i> <span class="like" id="post_like">{{object.likes.count}}</span></a>
+                                {% else %}
+                                    <a href="JavaScript:void(0)" class="user_like user_unclicked" onclick="like(this, {{object.id}})"><i id="clicked" class="fa fa-thumbs-up fa_icon"></i> <span class="like" id="post_like">{{object.likes.count}}</span></a>
+                                {% endif %}
+                                <a href="JavaScript:void(0)" class="user_comment"><i class="fa fa-comment fa_icon"></i></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+  <!-- /.card-body -->
+    </div>
+<!-- /.card -->
+</section>
+<script>
+    function like(that, obj)
+    {
+        var $this = that;
+        var like = $('.like').text();
+        var id = obj
+        $.ajax({
+            url: '{% url "post_like" %}',
+            type: "POST",
+            data: {
+              'pk': id,
+              'csrfmiddlewaretoken': '{{ csrf_token }}'
+            },
+            success: function (data) {
+                if(data == 'True')
+                {
+                    var like = parseInt($('.like').text())+1;
+                    $('#post_like').text(like);
+                    $('#clicked').css('color', 'rgb(0, 162, 255)');
+                }
+                if(data == 'False'){
+                    var like = parseInt($('.like').text())-1;
+                    $('#post_like').text(like);
+                    $('#clicked').css('color', 'rgb(82, 82, 82)');
+                }
+            }
+          });
+    }
+</script>
+{% endblock %}

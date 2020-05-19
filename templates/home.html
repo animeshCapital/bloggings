@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{%  block content %}
+
+<section class="content">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card-body">
+            <div class="row">
+                <table class="table table-striped col-md-9 table_body">
+                    <tbody>
+                    {% for post in posts %}
+                        <tr>
+                            {% if post.image %}
+                            <td class="post_link">
+                                <a class="post_img" href="{% url 'view' pk=post.id %}">
+                                    <img  alt="100x100" src="{{post.image.url}}" data-holder-rendered="true" height="150px">
+                                </a> <br>   
+                                <a class="post_img" href="{% url 'view' pk=post.id %}">
+                                    {{post.description|truncatewords:20 }}
+                                </a>
+                            </td>
+                            {% endif %}
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            
+            </div>
+        </div>
+    </div>
+  <!-- /.card-body -->
+    </div>
+<!-- /.card -->
+</section>
+{% endblock %}

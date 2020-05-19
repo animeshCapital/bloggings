@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{%  block content %}
+
+<div class="main_body">
+
+<form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+    <div class="container">
+      <h1 align="center">Edit Profile</h1>
+      <hr>
+  
+      <label for="first_name"><b>First Name</b></label>
+      {{p_form.first_name}}
+
+      <label for="last_name"><b>Last Name</b></label>
+      {{p_form.last_name}}
+
+      <label for="email"><b>Email</b></label>
+      {{p_form.email}}
+
+      <label for="email"><b>Phone No</b></label>
+      {{u_form.phone_no}}
+
+      <label for="image"><b>Image</b></label>
+      {{u_form.image}}</br>
+      <hr>
+      <button type="submit" class="registerbtn">Update</button>
+    </div>
+  </form>
+</div>
+
+{% endblock %}

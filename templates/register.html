@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{%  block content %}
+
+<div class="main_body">
+
+<form method="POST" action="">
+        {% csrf_token %}
+    <div class="container">
+      <h1 align="center">Register</h1>
+      <p align="center">Please fill in this form to create an account.</p>
+      <hr>
+  
+      <label for="username"><b>Username</b></label>
+      {{form.username}}
+      {{ form.username.errors }}
+
+      <label for="email"><b>Email</b></label>
+      {{form.email}}
+      {{ form.email.errors }}
+
+      <label for="password1"><b>Password</b></label>
+      {{form.password1}}
+      {{ form.password1.errors }}
+  
+      <label for="password2"><b>Repeat Password</b></label>
+      {{form.password2}}
+      {{ form.password2.errors }}
+      <hr>
+      <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+  
+      <button type="submit" class="registerbtn">Register</button>
+    </div>
+    
+    <div class="container signin">
+      <p>Already have an account? <a href="#">Sign in</a>.</p>
+    </div>
+  </form>
+</div>
+
+{% endblock %}

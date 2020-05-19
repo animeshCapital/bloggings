@@ -1,0 +1,129 @@
+.main_body{
+    margin-left: 400px;
+    width: 400px;
+    height: 400px;
+  }
+  /* Add padding to containers */
+  .container {
+      margin-top: 40px;
+      padding: 16px;
+      border: 2px solid brown;
+      background-color: white;
+      border-radius: 20px;
+
+  }
+  
+  /* Full-width input fields */
+  input[type=text], input[type=email], input[type=password]  {
+      width: 100%;
+      padding: 15px;
+      margin: 5px 0 22px 0;
+      display: inline-block;
+      border: none;
+      background: #f1f1f1;
+  }
+
+  select, textarea, checkbox {
+      width: 100%;
+      padding: 15px;
+      margin: 5px 0 22px 0;
+      display: inline-block;
+      border: none;
+      background: #f1f1f1;
+  }
+  
+  input[type=text]:focus, input[type=password]:focus, input[type=select]:focus, input[type=file]:focus {
+      background-color: #ddd;
+      outline: none;
+  }
+  
+  /* Overwrite default styles of hr */
+  hr {
+      border: 1px solid #f1f1f1;
+      margin-bottom: 25px;
+  }
+  
+  /* Set a style for the submit button */
+  .registerbtn {
+      background-color: #4CAF50;
+      color: white;
+      padding: 16px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      opacity: 0.9;
+      border-radius: 5px;
+
+  }
+  
+  .registerbtn:hover {
+      opacity: 1;
+  }
+  
+  /* Add a blue text color to links */
+  /* a {
+      color: white;
+  } */
+  
+  /* Set a grey background color and center the text of the "sign in" section */
+  .signin {
+      background-color: #f1f1f1;
+      text-align: center;
+  }
+  .table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+    margin-left: 123px;
+}
+textarea {
+    background-color: #ddd;
+    outline: none;
+}
+.login_form{
+    width: 400px !important;
+    margin-top: 60px !important;
+}
+.messages{
+    list-style: none;
+}
+.alert-error{
+    color: red;
+    list-style: none;
+}
+.errorlist{
+    color: red;
+    list-style: none;
+}
+
+.custom_navbar{
+    background-color: #4CAF50 !important;
+}
+.post_link a{
+    color: black;
+}
+img.rounded-circle.user_image {
+    margin-left: 873px;
+    margin-top: 5px;
+}
+.fa_icon{
+    font-size: 26px !important;
+    padding: 5px;
+}
+.post_img{
+    display: flex;
+    justify-content: center;
+}
+.user_clicked{
+    color: rgb(0, 162, 255);
+}
+.user_unclicked{
+    color: rgb(82, 82, 82);
+}
+.user_image{
+    height: 28px;
+}
+.menu_title{
+    color: white;
+}
